@@ -16,7 +16,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @Transactional
 class MemberJpaRepositoryTest {
 
-    @Autowired MemberJpaRepository memberJpaRepository;
+    @Autowired
+    MemberJpaRepository memberJpaRepository;
 
     @Test
     public void testMember() {
@@ -42,5 +43,6 @@ class MemberJpaRepositoryTest {
         assertThat(result.get(0).getAge()).isEqualTo(20);
         assertThat(result.size()).isEqualTo(1);
     }
+
 
 }

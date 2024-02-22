@@ -2,6 +2,7 @@ package study.datajpa.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import org.springframework.stereotype.Repository;
 import study.datajpa.entity.Member;
 
@@ -50,4 +51,12 @@ public class MemberJpaRepository {
                 .setParameter("age", age)
                 .getResultList();
     }
+
+    public List<Member> findByUsername(String username) {
+        return em.createNamedQuery("Member.findByUsername", Member.class)
+                ,setParameter("username", "회원1")
+                .getResultList();
+    }
+
+
 }
